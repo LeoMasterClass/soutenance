@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="images/pictos/loca-staff.ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <!--cookie-bar-->
+    <div id='cookie-bar'>
+      <div class="cookie text-white">
+        Ce site web utilise des cookies - 
+        <a id='cookie-policy' class="text-white" href=''>Consulter notre politique des cookies !</a>
+        <div id="bouton" class="ml-2 mr-2">
+          <button type="button" id="oui" class="btn btn-outline-light">Ok</button>
+          <button type="button" id="non" class="btn btn-outline-light">Non</button>
+        </div>
+      </div>
+    </div>
+    <!--fin de cookies-->
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-info bg-light">
+            <a class="navbar-brand" href="index.html"><img src="images/logos/loca-staff2.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ml-auto mr-auto">
+                    <li class="nav-item pr-3"><a class="nav-link text-info font-weight-bold h5"
+                            href="index.html">Accueil</a></li>
+                    <li class="nav-item pr-3"><a class="nav-link text-info font-weight-bold h5"
+                            href="presentation.html">Présentation</a></li>
+                    <li class="nav-item pr-3"><a class="nav-link text-info font-weight-bold h5"
+                            href="boutique.html">Boutique</a></li>
+                    <li class="nav-item pr-3"><a class="nav-link text-info font-weight-bold h5"
+                            href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link text-info font-weight-bold h5"
+                            href="contact.html">Contact</a></li>
+                </ul>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#Modal">
+                    Connexion
+                </button>
+            </div>
+        </nav>
+        <!-- Modal -->
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Connectes-toi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="traitement.php" method="post">
+                            <div class="form-group">
+                                <label for="InputEmail1">Adresse Mail</label>
+                                <input type="email" required class="form-control" id="InputEmail1" placeholder="Email"
+                                    required>
+                                <span id="mailErrormodal"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputPassword1">Mot de passe</label>
+                                <input type="password" required class="form-control" id="InputPassword1"
+                                    placeholder="Mot de passe" required>
+                                <span id="mdpError"></span>
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-dismiss="modal"
+                                data-target="#inscriptionModal">
+                                Inscription
+                            </button>
+                            <button type="submit" id="envoi_modal" class="btn btn-outline-success">Connexion</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal  inscription-->
+        <div class="modal fade" id="inscriptionModal" tabindex="-1" role="dialog"
+            aria-labelledby="inscriptionModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inscriptionModalLabel">Inscris-toi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="traitement.php" method="post">
+                            <div class="form-group text-center">
+                                <input type="text" required class="form-control" id="InputNomInscription"
+                                    placeholder="Nom de famille" required>
+                                <span id="missnom2"></span>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="text" required class="form-control" id="InputPrenomInscription"
+                                    placeholder="Prénom">
+                                    <span id="missPrenom1"></span>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="email" required class="form-control" id="InputEmailInscription"
+                                    aria-describedby="emailHelp" placeholder="Email">
+                                    <span id="mailErrormodal1"></span>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="password" required class="form-control" id="InputPasswordInscription"
+                                    placeholder="Mot de passe">
+                                    <span id="mdpError1"></span>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="password" required class="form-control" id="InputRepeatPasswordInscription"
+                                    placeholder="Vérification du mot de passe">
+                                    <span id="mdpError2"></span>
+                            </div>
+                            <button type="submit" id="envoi_inscription"
+                                class="btn btn-outline-success">Inscription</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <section>
+            <h1 class=" text-center text-white pt-4 font-weight-light">Location d'objets et de services entre
+                particuliers
+            </h1>
+            <!--formulaire demande de service-->
+            <div class="row d-flex justify-content-center col-md-12">
+                <form action="traitement.php" method="POST" class="col-md-4 border border-white m-5 p-2">
+                    <h2 class="text-white text-center p-2 font-weight-light">Demander un service</h2>
+                    <div class="form-group col-md-8 offset-md-2 text-center text-white">
+                        <label for="rubrique-search">Quel type de service cherchez-vous ?</label>
+                        <input type="text" class="form-control" name="rubrique-search" id="rubrique-search"
+                            placeholder="Choisissez votre rubrique">
+                    </div>
+                    <div class="form-group col-md-8 offset-md-2 text-center text-white">
+                        <label for="demand-object">Objet de votre demande</label>
+                        <input type="text" class="form-control" name="demand-object" id="demand-object"
+                            placeholder="Objet">
+                    </div>
+                    <div class="form-group col-md-8 offset-md-2 text-center text-white">
+                        <label for="demand-search">Votre demande</label>
+                        <textarea class="form-control" name="demand-search" id="demand-search"
+                            placeholder="Votre demande"></textarea>
+                    </div>
+                    <div  class="text-center">
+                        <button type="submit" class="btn btn-outline-light mb-2">Envoyer</button>
+                        </div>
+                </form>
+                <!--formulaire proposition de service-->
+                <div action="traitement.php" method="POST" class="col-md-4 border border-white m-5 p-2">
+                    <h2 class="text-white text-center p-2 font-weight-light">Proposer un service</h2>
+                    <div class="form-group col-md-8 offset-md-2 text-center text-white">
+                        <label for="rubrique-search">Quel type de service proposez-vous ?</label>
+                        <input type="text" class="form-control" name="service-rubrique-search"
+                            id="service-rubrique-search" placeholder="Choisissez votre rubrique">
+                    </div>
+                    <div class="form-group col-md-8 offset-md-2 text-center text-white">
+                        <label for="service-object">Objet de votre service</label>
+                        <input type="text" class="form-control" name="service-object" id="service-object"
+                            placeholder="Objet">
+                    </div>
+                    <div class="form-group col-md-8 offset-md-2 text-center text-white">
+                        <label for="proposition-search">Votre service</label>
+                        <textarea class="form-control" name="proposition-search" id="proposition-search"
+                            placeholder="Votre service"></textarea>
+                    </div>
+                    <div  class="text-center">
+                    <button type="submit" class="btn btn-outline-light mb-2">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="bg-light col-md-12  d-flex flex-column">
+            <h2 class="text-center text-info font-weight-light h1 mt-5 mb-5">Les rubriques</h2>
+            <div class="row d-flex justify-content-around">
+                <article class=" d-flex flex-column align-items-center">
+                    <img src="images/category/bricolage-jardinage.jpg" alt="" title="bricolage et jardinage">
+                    <h3 class="pb-4 pt-2"><a href="" class="text-info h5">Bricolage et Jardinage</a></h3>
+                </article>
+                <article class=" d-flex flex-column align-items-center">
+                    <img src="images/category/informatique-numerique.jpg" alt="" title="informatique">
+                    <h3 class="pb-4 pt-2"><a href="" class="text-info h5">Informatique et Numérique</a></h3>
+                </article>
+                <article class=" d-flex flex-column align-items-center">
+                    <img src="images/category/living-room.jpg" alt="" title="intérieur maison">
+                    <h3 class="pb-4 pt-2"><a href="" class="text-info h5">Maison et Intérieur</a>
+                    </h3>
+                </article>
+                <article class=" d-flex flex-column align-items-center">
+                    <img src="images/category/divers.jpg" alt="" title="bricolage et jardinage">
+                    <h3 class="pb-4 pt-2"><a href="" class="text-info h5">Plus de Rubriques</a></h3>
+                </article>
+            </div>
+        </section>
+        <section>
+            <div id="slider">
+                <div id="wrapper"></div>
+                <button id="left-arrow" class="btn btn-outline-light pt-5 pb-5">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button id="right-arrow" class="btn btn-outline-light pt-5 pb-5">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            <!--fin du slider-->
+             <div class="derniers-avis d-flex justify-content-around container">
+            <article class="card text-center d-flex align-items-center" style="width:30%">
+                <img class="card-img-top mt-2" src="images/profile-picture/profil-femme.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Jane Doe</h4>
+                    <p>★★★★★</p>
+                    <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                    <a href="#" class="btn btn-info">Voir le profil</a>
+                </div>
+            </article>
+            <article class="card text-center d-flex align-items-center" style="width:30%">
+                <img class="card-img-top mt-2" src="images/profile-picture/profile-chat.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Cat Doe</h4>
+                    <p>★★☆☆☆</p>
+                    <p class="card-text">Some example text some example text. Cat Doe is an singer</p>
+                    <a href="#" class="btn btn-info">Voir le profil</a>
+                </div>
+            </article>
+            <article class="card text-center d-flex align-items-center" style="width:30%">
+                <img class="card-img-top mt-2" src="images/profile-picture/profile-homme.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p>★★★★☆</p>
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <a href="#" class="btn btn-info">Voir le profil</a>
+                </div>
+            </article>
+        </div>
+        <!--ferme le slider-->
+    </div>
+        </section>
+
+    </main>
+    <footer class="d-flex justify-content-between align-items-center pt-4 pb-4">
+        <p class="text-white">&copyKercode 2019 -<a class="text-white" href="mentions-légales.html"> Mentions légales</a></p>
+        <nav class="navbar navbar-expand-lg navbar-info">
+                <ul class="navbar-nav ml-auto mr-auto">
+                    <li class="nav-item pr-3"><a class="nav-link text-white font-weight-light h5" href="index.html">Accueil</a></li>
+                    <li class="nav-item pr-3"><a class="nav-link text-white font-weight-light h5" href="presentation.html">Présentation</a></li>
+                    <li class="nav-item pr-3"><a class="nav-link text-white font-weight-light h5" href=boutique.html">Boutique</a></li>
+                    <li class="nav-item pr-3"><a class="nav-link text-white font-weight-light h5" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link text-white font-weight-light h5" href="contact.html">Contact</a></li>
+                </ul>
+        </nav>
+        <ul class="d-flex list-unstyled">
+            <li class="mr-2"><a href="http://www.facebook.com"><img src="images/logos-reseaux/facebook.png"></a></li>
+            <li class="mr-2"><a href="http://twitter.com"><img src="images/logos-reseaux/twitter.png"></a></li>
+            <li class="mr-2"><a href="http://instagram.com"><img src="images/logos-reseaux/Instagram.png"></a></liclass="mr-2">
+        </ul>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script defer src="js/main.js"></script> 
+    <script defer src="js/modal.js"></script>
+    <script src="js/active.js"></script>
+    <script type="text/javascript">
+    linksActive(0);
+    </script>
+</body>
+
+</html>

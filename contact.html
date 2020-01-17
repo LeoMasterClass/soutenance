@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="images/pictos/loca-staff.ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-info bg-light">
+            <a class="navbar-brand" href="index.html"><img src="images/logos/loca-staff2.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ml-auto mr-auto">
+                    <li class="nav-item pr-3"><a id="lien" class="nav-link text-info font-weight-bold h5"
+                            href="index.html">Accueil</a></li>
+                    <li class="nav-item pr-3"><a class="nav-link text-info font-weight-bold h5"
+                            href="presentation.html">Présentation</a></li>
+                    <li class="nav-item pr-3"><a class="nav-link text-info font-weight-bold h5"
+                            href="boutique.html">Boutique</a></li>
+                    <li class="nav-item pr-3"><a class="nav-link text-info font-weight-bold h5"
+                            href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link text-info font-weight-bold h5"
+                            href="contact.html">Contact</a></li>
+                </ul>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#Modal">
+                    Connexion
+                </button>
+            </div>
+        </nav>
+        <!-- Modal -->
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Connectes-toi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="traitement.php" method="post">
+                            <div class="form-group">
+                                <label for="InputEmail1">Adresse Mail</label>
+                                <input type="email" required class="form-control" id="InputEmail1" placeholder="Email"
+                                    required>
+                                <span id="mailErrormodal"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputPassword1">Mot de passe</label>
+                                <input type="password" required class="form-control" id="InputPassword1"
+                                    placeholder="Mot de passe" required>
+                                <span id="mdpError"></span>
+                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-info" data-toggle="modal" data-dismiss="modal"
+                                data-target="#inscriptionModal">
+                                Inscription
+                            </button>
+                            <button type="submit" id="envoi_modal" class="btn btn-outline-success">Connexion</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal  inscription-->
+        <div class="modal fade" id="inscriptionModal" tabindex="-1" role="dialog"
+            aria-labelledby="inscriptionModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inscriptionModalLabel">Inscris-toi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="traitement.php" method="post">
+                            <div class="form-group text-center">
+                                <input type="text" required class="form-control" id="InputNomInscription"
+                                    placeholder="Nom de famille" required>
+                                <span id="missnom2"></span>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="text" required class="form-control" id="InputPrenomInscription"
+                                    placeholder="Prénom">
+                                    <span id="missPrenom1"></span>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="email" required class="form-control" id="InputEmailInscription"
+                                    aria-describedby="emailHelp" placeholder="Email">
+                                    <span id="mailErrormodal1"></span>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="password" required class="form-control" id="InputPasswordInscription"
+                                    placeholder="Mot de passe">
+                                    <span id="mdpError1"></span>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="password" required class="form-control" id="InputRepeatPasswordInscription"
+                                    placeholder="Vérification du mot de passe">
+                                    <span id="mdpError2"></span>
+                            </div>
+                            <button type="submit" id="envoi_inscription"
+                                class="btn btn-outline-success">Inscription</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <h1 class="text-white text-center">Contactez-nous</h1>
+        <section class="container-fluid p-2">
+            <form action="traitement.php" method="POST"
+                class="container col-lg-6 border border-light d-flex flex-column justify-content-center text-white text-center">
+                <div class="form-check mt-3 mb-3">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="gender-male1" value="Mr">
+                    <label class="form-check-label mr-5" for="gender-male1">
+                        Mr.
+                    </label>
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="gender-female1" value="Mme">
+                    <label class="form-check-label" for="gender-female1">
+                        Mme.
+                    </label>
+                </div>
+                <div class="form-group col-lg-6 offset-lg-3">
+                    <label for="InputNom1">Nom</label>
+                    <input type="text" class="form-control" id="InputNom1" placeholder="Votre Nom" required>
+                    <span id="missnom"></span>
+                </div>
+                <div class="form-group col-lg-6 offset-lg-3">
+                    <label for="InputPrenom1">Prénom</label>
+                    <input type="text" class="form-control" id="InputPrenom1" placeholder="Votre Prénom" required>
+                    <span id="missPrenom"></span>
+                </div>
+                <div class="form-group col-lg-6 offset-lg-3">
+                    <label for="InputEmail2">Adresse Mail</label>
+                    <input type="email" class="form-control" id="InputEmail2" placeholder="Votre Mail" required>
+                    <span id="mailError"></span>
+                </div>
+                <div class="form-group col-lg-6 offset-lg-3">
+                    <label for="InputObjet1">Objet</label>
+                    <input type="text" class="form-control" id="InputObjet1" placeholder="L'objet de votre message">
+                </div>
+                <div class="form-group col-lg-6 offset-lg-3">
+                    <label for="InputMessage1">Votre Message</label>
+                    <textarea class="form-control" name="InputMessage1" id="InputMessage1" placeholder="Votre Message"
+                        cols="30" rows="5"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" id="bouton_envoi" class="btn btn-outline-light col-lg-3 mb-3">Envoyer</button>
+                </div>
+            </form>
+        </section>
+        <section class="container col-lg-10 d-flex justify-content-center m-2">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.92019771653!2d-2.7750422843680953!3d47.647117579187416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48101c1e45bf9d89%3A0xf1b4ec0fcc4d768d!2s20%20Rue%20Winston%20Churchill%2C%2056000%20Vannes!5e0!3m2!1sfr!2sfr!4v1573737512928!5m2!1sfr!2sfr"
+                width="600" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            <address class="text-white pl-3 mt-auto mb-auto h5 font-weight-light">
+                <span class="font-weight-bold">Loca-Staff<br></span>
+                20 Rue Winston Churchill<br>
+                56000 Vannes<br>
+                Tél: 02 97 46 66 66
+            </address>
+        </section>
+
+    </main>
+    <footer class="d-flex justify-content-between align-items-center pt-4 pb-4 border-top border-light">
+        <p class="text-white">&copyKercode 2019 -<a class="text-white" href="mentions-légales.html"> Mentions
+                légales</a></p>
+        <nav class="navbar navbar-expand-lg navbar-info">
+            <ul class="navbar-nav ml-auto mr-auto">
+                <li class="nav-item pr-3"><a class="nav-link text-white font-weight-light h5"
+                        href="index.html">Accueil</a></li>
+                <li class="nav-item pr-3"><a class="nav-link text-white font-weight-light h5"
+                        href="presentation.html">Présentation</a></li>
+                <li class="nav-item pr-3"><a class="nav-link text-white font-weight-light h5"
+                        href=boutique.html">Boutique</a></li>
+                <li class="nav-item pr-3"><a class="nav-link text-white font-weight-light h5" href="blog.html">Blog</a>
+                </li>
+                <li class="nav-item"><a class="nav-link text-white font-weight-light h5" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="d-flex list-unstyled">
+            <li class="mr-2"><a href="http://www.facebook.com"><img src="images/logos-reseaux/facebook.png"></a></li>
+            <li class="mr-2"><a href="http://twitter.com"><img src="images/logos-reseaux/twitter.png"></a></li>
+            <li class="mr-2"><a href="http://instagram.com"><img src="images/logos-reseaux/Instagram.png"></a></li>
+        </ul>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/modal.js"></script>
+    <script defer src="js/regex.js"></script>
+    <script src="js/active.js"></script>
+    <script type="text/javascript">
+    linksActive(4);
+    </script>
+</body>
+
+</html>
