@@ -1,7 +1,7 @@
 //Nom
-var nom = document.getElementById('InputNom1');
-var missnom = document.getElementById('missnom');
-var nomValid = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
+var name = document.getElementById('InputNom1');
+var missName = document.getElementById('missnom');
+var nameValid = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
 // Pour valider
 var formValid = document.getElementById('bouton_envoi');
 
@@ -9,44 +9,44 @@ formValid.addEventListener('click', validation);
 
 function validation(event) {
         //Si le champ est vide
-        if (nom.validity.valueMissing) {
+        if (name.validity.valueMissing) {
                 event.preventDefault();
-                missnom.textContent = 'Nom manquant';
-                missnom.style.color = 'orange';
+                missName.textContent = 'Nom manquant';
+                missName.style.color = 'orange';
                 //Si le format de données est incorrect
-        } else if (nomValid.test(nom.value) == false) {
+        } else if (nameValid.test(name.value) == false) {
                 event.preventDefault();
-                missnom.textContent = 'Format incorrect';
-                missnom.style.color = 'purple';
+                missName.textContent = 'Format incorrect';
+                missName.style.color = 'purple';
 
         } else {
-                missnom.textContent = '✔';
-                missnom.style.color = 'green';
+                missName.textContent = '✔';
+                missName.style.color = 'green';
         }
 }
 // Prenom
-var prenom = document.getElementById('InputPrenom1');
-var missPrenom = document.getElementById('missPrenom');
-var prenomValid = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
+var fullName = document.getElementById('InputPrenom1');
+var missFullName = document.getElementById('missPrenom');
+var fullNameValid = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
 
 
-formValid.addEventListener('click', validationPrenom);
+formValid.addEventListener('click', validationFullName);
 
-function validationPrenom(event) {
+function validationFullName(event) {
         //Si le champ est vide
-        if (prenom.validity.valueMissing) {
+        if (fullName.validity.valueMissing) {
                 event.preventDefault();
-                missPrenom.textContent = 'Prénom manquant';
-                missPrenom.style.color = 'orange';
+                missFullName.textContent = 'Prénom manquant';
+                missFullName.style.color = 'orange';
                 //Si le format de données est incorrect
-        } else if (prenomValid.test(prenom.value) == false) {
+        } else if (fullNameValid.test(fullName.value) == false) {
                 event.preventDefault();
-                missPrenom.textContent = 'Format incorrect';
-                missPrenom.style.color = 'purple';
+                missFullName.textContent = 'Format incorrect';
+                missFullName.style.color = 'purple';
 
         } else {
-                missPrenom.textContent = '✔';
-                missPrenom.style.color = 'green';
+                missFullName.textContent = '✔';
+                missFullName.style.color = 'green';
         }
 }
 //Mail
