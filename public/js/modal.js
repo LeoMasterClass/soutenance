@@ -24,77 +24,77 @@ function validationmodalMail(event) {
         }
 }
 //mot de passe modal
-var mdp = document.getElementById('InputPassword1');
-var mdpError = document.getElementById('mdpError');
-var regexMdp = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
+var password = document.getElementById('InputPassword1');
+var passwordError = document.getElementById('mdpError');
+var regexPassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
 
-formValidmodal.addEventListener('click', validMdp);
+formValidmodal.addEventListener('click', validPassword);
 
-function validMdp(event) {
-        if (mdp.validity.valueMissing) {
+function validPassword(event) {
+        if (password.validity.valueMissing) {
                 event.preventDefault();
-                mdpError.textContent = 'Mot de passe manquant';
-                mdpError.style.color = 'orange';
-        } else if (regexMdp.test(mdp.value) == false) {
+                passwordError.textContent = 'Mot de passe manquant';
+                passwordError.style.color = 'orange';
+        } else if (regexPassword.test(password.value) == false) {
                 event.preventDefault();
-                mdpError.textContent = 'Format incorrect';
-                mdpError.style.color = 'red';
+                passwordError.textContent = 'Format incorrect';
+                passwordError.style.color = 'red';
         } else {
-                mdpError.textContent = '✔';
-                mdpError.style.color = 'green';
+                passwordError.textContent = '✔';
+                passwordError.style.color = 'green';
         }
 }
 
 //Modal Inscription
 //nom
-var nominscription = document.getElementById('InputNomInscription');
-var missnominscription = document.getElementById('missnom2');
-var nomValidinscription = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
+var nameSign = document.getElementById('InputNomInscription');
+var missNameSign = document.getElementById('missnom2');
+var nameValidSign = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
 
-var formValidInscription = document.getElementById('envoi_inscription');
+var formValidSign = document.getElementById('envoi_inscription');
 
-formValidInscription.addEventListener('click', NomInscription);
+formValidSign.addEventListener('click', nameSign);
 
-function NomInscription(event) {
+function nameSign(event) {
         //Si le champ est vide
-        if (nominscription.validity.valueMissing) {
+        if (nameSign.validity.valueMissing) {
                 event.preventDefault();
-                missnominscription.textContent = 'Nom manquant';
-                missnominscription.style.color = 'orange';
+                missNameSign.textContent = 'Nom manquant';
+                missNameSign.style.color = 'orange';
                 //Si le format de données est incorrect
-        } else if (nomValidinscription.test(nominscription.value) == false) {
+        } else if (nameValidSign.test(nameSign.value) == false) {
                 event.preventDefault();
-                missnominscription.textContent = 'Format incorrect';
-                missnominscription.style.color = 'red';
+                missNameSign.textContent = 'Format incorrect';
+                missNameSign.style.color = 'red';
 
         } else {
-                missnominscription.textContent = '✔';
-                missnominscription.style.color = 'green';
+                missNameSign.textContent = '✔';
+                missNameSign.style.color = 'green';
         }
 }
 // Prenom
-var prenom1 = document.getElementById('InputPrenomInscription');
-var missPrenom1 = document.getElementById('missPrenom1');
-var prenomValid1 = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
+var fullName1 = document.getElementById('InputPrenomInscription');
+var missFullName1 = document.getElementById('missPrenom1');
+var fullNameValid1 = /^([a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]{2,})?$/;
 
 
-formValidInscription.addEventListener('click', validationPrenom1);
+formValidSign.addEventListener('click', validationFullName1);
 
-function validationPrenom1(event) {
+function validationFullName1(event) {
         //Si le champ est vide
-        if (prenom1.validity.valueMissing) {
+        if (fullName1.validity.valueMissing) {
                 event.preventDefault();
-                missPrenom1.textContent = 'Prénom manquant';
-                missPrenom1.style.color = 'orange';
+                missFullName1.textContent = 'Prénom manquant';
+                missFullName1.style.color = 'orange';
                 //Si le format de données est incorrect
-        } else if (prenomValid1.test(prenom1.value) == false) {
+        } else if (fullNameValid1.test(fullName1.value) == false) {
                 event.preventDefault();
-                missPrenom1.textContent = 'Format incorrect';
-                missPrenom1.style.color = 'red';
+                missFullName1.textContent = 'Format incorrect';
+                missFullName1.style.color = 'red';
 
         } else {
-                missPrenom1.textContent = '✔';
-                missPrenom1.style.color = 'green';
+                missFullName1.textContent = '✔';
+                missFullName1.style.color = 'green';
         }
 }
 //Mail
@@ -103,7 +103,7 @@ var mailErrormodal1 = document.getElementById('mailErrormodal1');
 var mailValidmodal1 = /^[a-zA-Z-0-9]+@[a-zA-Z-]+\.[a-zA-Z]{2,6}$/;
 
 
-formValidInscription.addEventListener('click', validationmodalMail1);
+formValidSign.addEventListener('click', validationmodalMail1);
 
 function validationmodalMail1(event) {
         if (mailmodal1.validity.valueMissing) {
@@ -121,44 +121,44 @@ function validationmodalMail1(event) {
         }
 }
 //mot de passe modal
-var mdp1 = document.getElementById('InputPasswordInscription');
-var mdpError1 = document.getElementById('mdpError1');
-var regexMdp1 = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
+var password1 = document.getElementById('InputPasswordInscription');
+var passwordError1 = document.getElementById('mdpError1');
+var regexPassword1 = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
 
-formValidInscription.addEventListener('click', validMdp1);
+formValidSign.addEventListener('click', validPassword1);
 
-function validMdp1(event) {
-        if (mdp1.validity.valueMissing) {
+function validPassword1(event) {
+        if (password1.validity.valueMissing) {
                 event.preventDefault();
-                mdpError1.textContent = 'Mot de passe manquant';
-                mdpError1.style.color = 'orange';
-        } else if (regexMdp1.test(mdp1.value) == false) {
+                passwordError1.textContent = 'Mot de passe manquant';
+                passwordError1.style.color = 'orange';
+        } else if (regexPassword1.test(password1.value) == false) {
                 event.preventDefault();
-                mdpError1.textContent = 'Format incorrect';
-                mdpError1.style.color = 'red';
+                passwordError1.textContent = 'Format incorrect';
+                passwordError1.style.color = 'red';
         } else {
-                mdpError1.textContent = '✔';
-                mdpError1.style.color = 'green';
+                passwordError1.textContent = '✔';
+                passwordError1.style.color = 'green';
         }
 }
 //mot de passe repeat modal
-var mdp2 = document.getElementById('InputRepeatPasswordInscription');
-var mdpError2 = document.getElementById('mdpError2');
-var regexMdp2 = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
+var password2 = document.getElementById('InputRepeatPasswordInscription');
+var passwordError2 = document.getElementById('mdpError2');
+var regexPassword2 = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/;
 
-formValidInscription.addEventListener('click', validMdp2);
+formValidSign.addEventListener('click', validPassword2);
 
-function validMdp2(event) {
-        if (mdp2.validity.valueMissing) {
+function validPassword2(event) {
+        if (password2.validity.valueMissing) {
                 event.preventDefault();
-                mdpError2.textContent = 'Mot de passe manquant';
-                mdpError2.style.color = 'orange';
-        } else if (regexMdp2.test(mdp2.value) == false) {
+                passwordError2.textContent = 'Mot de passe manquant';
+                passwordError2.style.color = 'orange';
+        } else if (regexPassword2.test(password2.value) == false) {
                 event.preventDefault();
-                mdpError2.textContent = 'Format incorrect';
-                mdpError2.style.color = 'red';
+                passwordError2.textContent = 'Format incorrect';
+                passwordError2.style.color = 'red';
         } else {
-                mdpError2.textContent = '✔';
-                mdpError2.style.color = 'green';
+                passwordError2.textContent = '✔';
+                passwordError2.style.color = 'green';
         }
 }
