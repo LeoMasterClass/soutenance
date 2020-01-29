@@ -13,7 +13,7 @@ $.ajax({
         'channel': '#mercedesbenz',
         'text':"Nom : "+ firstNameSlack + '\n' + "Prénom : " + nameSlack + '\n'  + "Mail : " + mailSlack + '\n'
         + "Objet : " + objectSlack + '\n'  + "Message : " + messageSlack,
-        'token': creds.tokens
+        'token': creds.token
     },
     dataType: 'json'
 }).done(function (response) {
