@@ -11,8 +11,8 @@ $.ajax({
     type: 'POST',
     data: {
         'channel': '#mercedesbenz',
-        'text':"Nom : "+ firstNameSlack + '\n' + "Prénom : " + nameSlack + '\n'  + "Mail : " + mailSlack + '\n'
-        + "Objet : " + objectSlack + '\n'  + "Message : " + messageSlack,
+        'text':"|-|-|-|-|-|-Début de transmission-|-|-|-|-|-|" + "\n" + "Nom : "+ firstNameSlack + '\n' + "Prénom : " + nameSlack + '\n'  + "Mail : " + mailSlack + '\n'
+        + "Objet : " + objectSlack + '\n'  + "Message : " + messageSlack + '\n' + '|-|-|-|-|-|-Transmission terminée...-|-|-|-|-|-|',
         'token': creds.token
     },
     dataType: 'json'

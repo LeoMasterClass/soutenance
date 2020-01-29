@@ -265,3 +265,9 @@
 .active{
   color: #ff89e9 !important;
 }
+.relou{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+}
