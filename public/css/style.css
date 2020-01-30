@@ -90,7 +90,7 @@
   display: block;
   position: relative;
   max-width: none;
-  width: calc(100% + 60px);
+  width: calc(120% + 200px);
   -webkit-transition: opacity 1.00s, transform 1.00s;
   transition: opacity 1.00s, transform 1.00s;
   -webkit-transform: translate3d(-40px, 0, 0);
@@ -98,6 +98,9 @@
   -moz-transition: opacity 1.00s, transform 1.00s;
   -ms-transition: opacity 1.00s, transform 1.00s;
   -o-transition: opacity 1.00s, transform 1.00s;
+  -moz-transform: translate3d(-40px, 0, 0);
+  -ms-transform: translate3d(-40px, 0, 0);
+  -o-transform: translate3d(-40px, 0, 0);
 }
 
 
@@ -147,9 +150,12 @@
 .hovereffect:hover img {
   opacity: 0.6;
   filter: alpha(opacity=60);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(30,0 0, 0);
+  transform: translate3d(30,0 0, 0);
   -webkit-filter: alpha(opacity=60);
+  -moz-transform: translate3d(30,0 0, 0);
+  -ms-transform: translate3d(30,0 0, 0);
+  -o-transform: translate3d(30,0 0, 0);
 }
 
 .hovereffect:hover .overlay:before,
@@ -270,4 +276,9 @@
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
+}
+.couleur{
+  background-color: rgba(255, 255, 255, 0.568);
+  text-decoration: none;
+  list-style-type: none;
 }

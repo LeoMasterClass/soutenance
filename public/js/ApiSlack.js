@@ -11,16 +11,16 @@ $.ajax({
     type: 'POST',
     data: {
         'channel': '#mercedesbenz',
-        'text':"|-|-|-|-|-|-Début de transmission-|-|-|-|-|-|" + "\n" + "Nom : "+ firstNameSlack + '\n' + "Prénom : " + nameSlack + '\n'  + "Mail : " + mailSlack + '\n'
-        + "Objet : " + objectSlack + '\n'  + "Message : " + messageSlack + '\n' + '|-|-|-|-|-|-Transmission terminée...-|-|-|-|-|-|',
+        'text':"|-|-|-|-|-|-Début de transmission-|-|-|-|-|-|" + '\n' + "\n" + '\n'  + "Nom : "+ firstNameSlack + '\n' + '\n'  + "Prénom : " + nameSlack + '\n'  + '\n'  + "Mail : " + mailSlack + '\n'
+        + '\n'  + "Objet : " + objectSlack + '\n'  + '\n'  + "Message : " + messageSlack + '\n' + '\n'  + '|-|-|-|-|-|-Transmission terminée...-|-|-|-|-|-|',
         'token': creds.token
     },
     dataType: 'json'
 }).done(function (response) {
-    //when it's done
+
     console.log(response)
 }).fail(function (error) {
-    //when it fail
+
     console.log(error)
 })
 }
