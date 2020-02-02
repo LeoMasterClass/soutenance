@@ -1,5 +1,4 @@
 
-
 function submit(){
     let firstNameSlack = document.getElementById("InputNom1").value;
     let nameSlack = document.getElementById("InputPrenom1").value;
