@@ -282,3 +282,16 @@
   text-decoration: none;
   list-style-type: none;
 }
+
+#adressList {
+  list-style-type: none;
+  padding: 0;
+}
+#adressList li{
+  font-size: 1.2rem;
+  padding: 10px 10px;
+}
+#adressList li:hover {
+  background-color: rgb(148, 149, 150);
+  color: white;
+}
